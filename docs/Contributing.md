@@ -1,5 +1,4 @@
 
-
 ### Reporting Bugs
 
 If you encounter any bugs or issues, please create an issue in the GitHub repository detailing the problem as much as possible. Include screenshots and error messages, if any.
@@ -32,11 +31,9 @@ Please follow these steps to have your contribution considered by the maintainer
 1. Follow all instructions in the template
 2. After you submit your pull request, verify that all status checks are passing
 
-While the prerequisites above must be satisfied prior to having your pull request reviewed, the reviewer(s) may ask you to complete additional design work, tests, or other changes before your pull request can be ultimately accepted.
+Once your pull request is approved, give yourself a pat on the back! Now, wait for your changes to be approved merged.
 
-Once your pull request is approved, give yourself a pat on the back! You've contributed to making the URL Shortener Service even better. Now, wait for your changes to be merged.
-
-## Styleguides
+## General Styleguides
 
 ### Git Commit Messages
 
@@ -53,10 +50,6 @@ All JavaScript must adhere to [JavaScript Standard Style](https://standardjs.com
 
 Use [Markdown](https://daringfireball.net/projects/markdown/) for documentation.
 
-## Thank You!
-
-Your contributions to open source, large or small, make great projects like this possible. Thank you for taking the time to contribute.
-
 ### Bonus: 
 If you're new to Open Source, consider the following:  
 GitHub Copilot: Sure, here are some resources that can help newcomers to open source:
@@ -70,3 +63,5 @@ GitHub Copilot: Sure, here are some resources that can help newcomers to open so
 7. [FreeCodeCamp's guide to getting involved in open source](https://www.freecodecamp.org/news/how-to-contribute-to-open-source-projects-for-the-first-time-84d01a0b3413/)
 
 Remember, contributing to open source is not just about coding. You can help with documentation, translation, design, writing test cases, and more. Every contribution counts!
+
+## Thank You!
