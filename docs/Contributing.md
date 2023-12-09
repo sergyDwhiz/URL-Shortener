@@ -1,8 +1,4 @@
-GitHub Copilot: # Contributing to URL Shortener Service
 
-First off, thank you for considering contributing to this project! It's people like you that make URL Shortener Service such a great tool.
-
-## How Can I Contribute?
 
 ### Reporting Bugs
 
