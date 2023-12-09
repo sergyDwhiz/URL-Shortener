@@ -1,10 +1,16 @@
+/**
+ * Shortener.js
+ * Contains the function for shortening URLs.
+ * Copyright (C) 2023 Sergius Nyah
+ **/ 
+
 import express from ('express'); // For creating the server
 import mongoose from ('mongoose'); // For interacting with MongoDB
 import shortId from ('shortid'); // For generating unique short IDs
 import validUrl from ('valid-url');  // For validating URLs
 
 const app = express();
-
+ 
 mongoose.connect('mongodb://localhost/urlShortener', {
   useNewUrlParser: true,
   useUnifiedTopology: true
