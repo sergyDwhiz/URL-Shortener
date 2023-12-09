@@ -1,5 +1,3 @@
-GitHub Copilot: # URL Shortener Service
-
 This project is a URL shortener service built with Node.js, Express, and MongoDB. It provides an API for creating short URLs from original URLs and redirecting from the short URLs to the original URLs.
 
 ## Features
