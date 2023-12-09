@@ -1,4 +1,6 @@
-This project is a URL shortener service built with Node.js, Express, and MongoDB. It provides an API for creating short URLs from original URLs and redirecting from the short URLs to the original URLs.
+### About 
+This project is a URL shortener service built with Node.js, Express, and MongoDB. It provides an API for creating short URLs from original URLs and redirecting from the short URLs to the original URLs. Users also have to choice to create a short URL from their own 
+custom codes. This helps for easier rememberance. 
 
 ## Features
 
@@ -18,6 +20,7 @@ This project is a URL shortener service built with Node.js, Express, and MongoDB
 
 1. Clone the repository:
    ```
+   inititialize git (git init)
    git clone https://github.com/Sergius-Nyah/url-shortener.git
    ```
 2. Navigate to the project directory:
@@ -26,7 +29,7 @@ This project is a URL shortener service built with Node.js, Express, and MongoDB
    ```
 3. Install the dependencies:
    ```
-   npm install
+   npm install express mongoose shortid valid-url
    ```
 4. Start the server:
    ```
@@ -48,7 +51,7 @@ The service will return a JSON object with the original URL, the short URL, and 
 
 ```json
 {
-  "originalUrl": "https://example.com",
+  "originalUrl": "https://example.com", 
   "shortUrl": "http://short.url/customCode",
   "urlCode": "customCode"
 }
@@ -63,3 +66,4 @@ Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTIN
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details. 
+ 
