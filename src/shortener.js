@@ -57,13 +57,18 @@ app.post('/shorten', async (req, res, next) => {
   }
 });
 
+/**
+ * Expects a URL code as a route parameter. 
+ * Checks if a document with the provided code exists, if yes, the user is redirected to the original URL. 
+ * Else a 404 Not Found error is returned.
+ */
 app.get('/:urlCode', async (req, res, next) => {
   try {
     const url = await Url.findOne({ urlCode: req.params.urlCode });
     if (url) {
       res.redirect(url.originalUrl);
     } else {
-      res.status(404).send('URL not found');
+      res.status(404).send('URL not found'); // 404 Not Found
     }
   } catch (error) {
     next(error);
@@ -72,7 +77,8 @@ app.get('/:urlCode', async (req, res, next) => {
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).send('Something broke!');
+  res.status(500).send('Something up here!'); // 500 Internal Server Error  
 });
 
 app.listen(3000, () => console.log('Listening on port 3000'));
+
