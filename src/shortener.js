@@ -30,24 +30,33 @@ app.use(express.json()); // For parsing json request bodies.
 /** 
  * Route that expects a request body with an originalUrl property. 
  * If the provided URL is valid, it checks the database using @findOne to see if it has
- *  been shortened before. If it has, the existing document is returned. 
+ * been shortened before. If it has, the existing document is returned. 
  * Else a new document is created with a unique code, saved to the database, 
  * and then returned in the response. If an error occurs during this process, 
  * it is passed to the next middleware function.
  */
 app.post('/shorten', async (req, res, next) => {
-  const { originalUrl } = req.body;
+  const { originalUrl, urlCode:customUrlCode } = req.body;
   if (validUrl.isUri(originalUrl)) {
     try {
       let url = await Url.findOne({ originalUrl });
       if (url) {
         res.send(url);
       } else {
-        const urlCode = shortId.generate();
+        let urlCode;
+        if(customUrlCode){
+            const existingUrl = await Url.findOne({ urlCode: customUrlCode });
+            if(existingUrl){
+                return res.status(400).send('Custom URL already exists');
+            }
+            urlCode = customUrlCode;
+        }else{
+            urlCode = shortId.generate();
+        }
         const shortUrl = `http://short.url/${urlCode}`;
         url = new Url({ originalUrl, shortUrl, urlCode });
         await url.save();
-        res.send(url);
+        res.send(url); 
       }
     } catch (error) {
       next(error);
