@@ -1,7 +1,7 @@
-import express from ('express');
-import mongoose from ('mongoose');
-import shortId from ('shortid');
-import validUrl from ('valid-url');  
+import express from ('express'); // For creating the server
+import mongoose from ('mongoose'); // For interacting with MongoDB
+import shortId from ('shortid'); // For generating unique short IDs
+import validUrl from ('valid-url');  // For validating URLs
 
 const app = express();
 
@@ -10,6 +10,12 @@ mongoose.connect('mongodb://localhost/urlShortener', {
   useUnifiedTopology: true
 }).catch(error => console.error('Error connecting to MongoDB:', error));
 
+// MongoDB schema for storing URLs
+/**
+ Each URL document will contain the original URL,
+ the shortened URL, a unique code for the shortened URL, 
+ and a timestamp for when the document was created.
+**/
 const urlSchema = new mongoose.Schema({
   originalUrl: String,
   shortUrl: String,
@@ -19,8 +25,16 @@ const urlSchema = new mongoose.Schema({
 
 const Url = mongoose.model('Url', urlSchema);
 
-app.use(express.json());
+app.use(express.json()); // For parsing json request bodies. 
 
+/** 
+ * Route that expects a request body with an originalUrl property. 
+ * If the provided URL is valid, it checks the database using @findOne to see if it has
+ *  been shortened before. If it has, the existing document is returned. 
+ * Else a new document is created with a unique code, saved to the database, 
+ * and then returned in the response. If an error occurs during this process, 
+ * it is passed to the next middleware function.
+ */
 app.post('/shorten', async (req, res, next) => {
   const { originalUrl } = req.body;
   if (validUrl.isUri(originalUrl)) {
