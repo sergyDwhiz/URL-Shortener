@@ -8,7 +8,7 @@ If you encounter any bugs or issues, please create an issue in the GitHub reposi
 
 If you have ideas on how to improve the URL Shortener Service or add new features, please create an issue in the GitHub repository. Be as detailed as possible in your explanation.
 
-### Your First Code Contribution
+### Your First Code Contribution 
 
 If you're looking to dive into the code, here's the process:
 
