@@ -1,4 +1,4 @@
-import request from 'supertest';
+import request from 'supertest'; // Library for testing HTTP servers
 import app from '../app.js'; // Import your Express app
 import mongoose from 'mongoose';
 import Url from '../models/url.js'; // Import your Url model
@@ -29,4 +29,21 @@ beforeAll(async () => { // Import your Url model
       expect(res.body).toHaveProperty('shortUrl');
     }); 
   });
-  
+  it('should return an error for an invalid URL', async () => {
+    const res = await request(app)
+      .post('/shorten')
+      .send({
+        originalUrl: 'not a valid url',
+      });
+    expect(res.statusCode).toEqual(400); // In the Case of a Bad request
+  });
+
+  it('should return an error for a custom URL code that already exists', async () => {
+    const res = await request(app)
+      .post('/shorten')
+      .send({
+        originalUrl: 'https://example.com',
+        urlCode: 'customCode'
+      });
+    expect(res.statusCode).toEqual(400);// Custom URL already in use. 
+  });
