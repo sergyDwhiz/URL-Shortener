@@ -1,0 +1,28 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "Provides an API for creating short URLs from original URLs and redirecting users to the short ones ",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "shortener.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//Sergius-Nyah/URL-Shortener"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "Unit",
+    "tests",
+    "Collab",
+    "URLs",
+    "Strategies"
+  ],
+  "author": "Sergius Nyah",
+  "license": "MIT "
+}
