@@ -5,7 +5,8 @@
   "main": "index.js",
   "directories": {
     "doc": "docs",
-    "test": "tests"
+    "test": "tests", 
+    "type": "module"
   },
   "scripts": {
     "test": "shortener.js"
@@ -24,5 +25,12 @@
     "Strategies"
   ],
   "author": "Sergius Nyah",
-  "license": "MIT "
+  "license": "MIT ",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3",
+    "nanoid": "^5.0.4",
+    "shortid": "^2.2.16",
+    "supertest": "^6.3.3"
+  }
 }
