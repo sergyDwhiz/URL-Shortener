@@ -14,6 +14,10 @@ beforeAll(async () => { // Import your Url model
   afterAll(async () => {
     await mongoose.connection.close();
   });
+/* *
+ *Provides a unit test for the POST request to the /shorten endpoint in @shorterner.js
+ *The "it" funtion provided by Jest specifies what the actual function should do. 
+ */
   describe('POST /shorten', () => {
     it('should shorten a valid URL', async () => {
       const res = await request(app)
@@ -21,7 +25,7 @@ beforeAll(async () => { // Import your Url model
         .send({
           originalUrl: 'https://example.com',
         });
-      expect(res.statusCode).toEqual(200);
+      expect(res.statusCode).toEqual(200);  // Checks that request is Succesful
       expect(res.body).toHaveProperty('shortUrl');
     }); 
   });
