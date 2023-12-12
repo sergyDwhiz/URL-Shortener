@@ -6,7 +6,7 @@
  
 import express from ('express'); // For creating the server
 import mongoose from ('mongoose'); // For interacting with MongoDB
-import shortId from ('shortid'); // For generating unique short IDs
+import nanoid from ('nanoid'); // For generating unique codes
 import validUrl from ('valid-url');  // For validating URLs
 
 const app = express(); 
@@ -57,7 +57,7 @@ app.post('/shorten', async (req, res, next) => {
             }
             urlCode = customUrlCode;
         }else{
-            urlCode = shortId.generate();
+            urlCode = nanoid(); // Generated a URL code using then nanoid pkg
         }
         const shortUrl = `http://short.url/${urlCode}`;
         url = new Url({ originalUrl, shortUrl, urlCode });
