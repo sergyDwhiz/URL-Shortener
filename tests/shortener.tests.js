@@ -1,8 +1,8 @@
-const request = require('supertest');
-const app = require('../app'); // Import your Express app
-const mongoose = require('mongoose');
-const Url = require('../models/url'); // Import your Url model
-beforeAll(async () => {
+import request from ('supertest'); 
+const app = require('../app'); // Import your Express app import app from (../app);
+import mongoose from 'mongoose';
+import Url from ('../models/url');
+beforeAll(async () => { // Import your Url model 
     await mongoose.connect(global.__MONGO_URI__, { useNewUrlParser: true, useCreateIndex: true }, (err) => {
       if (err) {
         console.error(err);
