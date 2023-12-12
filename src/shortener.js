@@ -3,14 +3,14 @@
  * Contains the function for shortening URLs.
  * Copyright (C) 2023 Sergius Nyah
  **/ 
-
+ 
 import express from ('express'); // For creating the server
 import mongoose from ('mongoose'); // For interacting with MongoDB
 import shortId from ('shortid'); // For generating unique short IDs
 import validUrl from ('valid-url');  // For validating URLs
 
-const app = express();
- 
+const app = express(); 
+
 mongoose.connect('mongodb://localhost/urlShortener', {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -98,3 +98,4 @@ app.use((err, req, res, next) => {
 app.listen(3000, () => console.log('Listening on port 3000'));
 
 // Path: src/index.js
+
