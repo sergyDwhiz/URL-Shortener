@@ -1,7 +1,7 @@
 # URL-Shortener
-This project is a URL shortener service built with Node.js, Express, and MongoDB. It provides an API for creating short URLs from original URLs and redirecting from the short URLs to the original URLs.
+This project is a URL shortener service built with Node.js, Express, and MongoDB. It provides a RESTful API for creating short URLs from original URLs and redirecting from the short URLs to the original URLs.
 
-## Features
+## Features 
 
 - URL validation: Only valid URLs can be shortened.
 - Custom URL codes: Users can specify a custom code for their short URLs.
